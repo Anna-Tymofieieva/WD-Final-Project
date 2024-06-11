@@ -2,10 +2,9 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Doctor Appointment Booking</title>
-        <link rel="stylesheet"href="style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="container">
@@ -15,23 +14,26 @@
                 <select id="profileSelect" onchange="loadDoctors()">
                     <option value="">Select Profile</option>
                     <option value="family">Family Doctor</option>
-                    <option value="ophtalmologist">Ophthalmologist</option>
-                    <option value="ent">ENT Specialist</option>
+                    <option value="ophthalmologist">Ophthalmologist</option>
                     <option value="cardiologist">Cardiologist</option>
-                    <option value="orthopedist">Orthopedist</option>
+                    <!-- <option value="ent">ENT Specialist</option> -->
+                    <!-- <option value="orthopedist">Orthopedist</option> -->
                 </select>
             </div>
+
             <div id="step2" style="display: none;">
                 <h2>Select Doctor</h2>
                 <select id="doctorSelect" onchange="showStep3()">
                     <option id="doctorSelectt" value="">Select Doctor</option>
                 </select>
             </div>
+
             <div id="step3" style="display: none;">
                 <h2>Select Date and Time</h2>
                 <input type="date" id="appointmentDate" onchange="showStep4()">
                 <input type="time" id="appointmentTime" onchange="showStep4()">
             </div>
+
             <div id="step4" style="display: none;">
                 <h2>Enter Patient Details</h2>
                 <input type="text" id="patientName" placeholder="Full Name" oninput="checkPatientInfo()">
@@ -39,13 +41,19 @@
                 <input type="tel" id="patientPhone" placeholder="Phone Number" oninput="checkPatientInfo()">
                 <input type="email" id="patientEmail" placeholder="Email" oninput="checkPatientInfo()">
                 <button type="button" onclick="showConfirmationPage()">Next</button>
+                <!-- <button id="nextButton" onclick="showConfirmationPage()">Next</button> -->
                 <!-- <button id="nextButton" style="display: none;" onclick="showConfirmationPage()">Next</button> -->
             </div>
+
             <div id="step5" style="display: none;">
                 <h2>Review and Confirm</h2>
                 <div id="confirmationDetails"></div>
-                <button onclick="confirmAppointment()">Confirm</button>
-                <button onclick="editAppointment()">Edit</button>
+                <div id="buttonContainer">
+                    <button id="editButton" onclick="editAppointment()">Edit</button>
+                    <button id="confirmButton" onclick="confirmAppointment()">Confirm</button>
+                </div>
+                <!-- <button onclick="confirmAppointment()">Confirm</button>
+                <button onclick="editAppointment()">Edit</button> -->
             </div>
         </div>
         <script src="script.js"></script>
