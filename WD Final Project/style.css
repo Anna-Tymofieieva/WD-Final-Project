@@ -24,6 +24,7 @@ input, select {
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    cursor: default;
 }
 
 button
@@ -36,11 +37,12 @@ button
     border-radius: 4px;
     background-color: #4CAF50;
     color: white;
-    cursor: pointer;
+    cursor: default;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #135c17;
+    cursor: default;
 }
 
 .display{
@@ -51,4 +53,25 @@ button:hover {
     button {
         width: calc(100% - 20px);
     }
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; 
+}
+
+
+#confirmButton,
+#editButton {
+    padding: 10px 20px;
+    background-color: #e4ad3f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#editButton {
+    background-color: #07c04e;
+    margin-left: 10px; 
 }
